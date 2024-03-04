@@ -45,3 +45,26 @@ public class FacultyManagementSystem {
             }
         }
     }
+private static void addFaculty(Scanner scanner) {
+        System.out.print("Enter Faculty Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter Experience: ");
+        int experience = scanner.nextInt();
+        System.out.print("Enter Salary: ");
+        double salary = scanner.nextDouble();
+
+        Faculty faculty = new Faculty(facultyIdCounter++, name, experience, salary);
+        facultyList.add(faculty);
+
+        System.out.println("Faculty added successfully!");
+    }
+
+    private static void displayFaculty() {
+        if (facultyList.isEmpty()) {
+            System.out.println("No faculty records available.");
+        } else {
+            for (Faculty faculty : facultyList) {
+                faculty.displayFaculty();
+            }
+        }
+    }
